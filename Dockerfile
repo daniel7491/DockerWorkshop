@@ -1,5 +1,6 @@
 FROM python:2.7-onbuild 
 EXPOSE 5000
-
-COPY app.py app.py
+WORKDIR /src/app
+COPY . .
+run pip install -r requirments.txt
 CMD ["python", "app.py" ]
